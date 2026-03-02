@@ -2,19 +2,113 @@
 
 **Lab. Report #3 – Code Coverage, Adequacy Criteria and Test Case Correlation**
 
-| Group \#:      |     |
+| Group \#:  9    |    |
 | -------------- | --- |
-| Student Names: |     |
+| Student Names: |  UCID:   |
+|      Josral Frederick          |  30195360   |
 |                |     |
-|                |     |
-|                |     |
+|                |     |  
+|                |     |  
+|                |     |  
 
 (Note that some labs require individual reports while others require one report
 for each group. Please see each lab document for details.)
 
 # 1 Introduction
 
+
 Text…
+
+# Measure Control Flow Coverage
+
+We measured control-flow adequacy of our existing Assignment 2 test suite by instrumenting the target classes in org.jfree.data and running the full test suite under a coverage tool. The classes selected for instrumentation were:
+-  org.jfree.data.Range
+-  org.jfree.data.DataUtilities
+
+These were the findings our findings: 
+
+<img width="686" height="122" alt="Screenshot 2026-03-02 at 3 38 38 AM" src="https://github.com/user-attachments/assets/c1ef51db-e11b-4b87-a6e0-f958e71144c0" />
+
+Condition coverage was not directly supported by EclEmma in our configuration, so we replaced it with method coverage. 
+
+
+### Coverage tool used
+
+We used EclEmma (Eclipse code coverage plug-in) to measure coverage. We executed our JUnit 5 tests using 
+Coverage As → JUnit Test, which produced:
+
+- percentage coverage per class,
+
+- counts of covered vs missed instructions/branches,
+
+- visual highlighting of uncovered code paths (green/red) inside the instrumented source files.
+
+This visualization helped us identify which parts of Range and DataUtilities were not executed by the current test suite.
+
+### Pros and cons of the coverage metrics
+
+#### Statement (Instruction) Coverage — Pros
+
+- Easy to improve and interpret: it directly shows which lines/instructions were never executed.
+
+- Good first signal that certain parts of the codebase have no tests at all.
+
+#### Statement (Instruction) Coverage — Cons
+
+- It can be misleading: a statement can execute without verifying correctness (weak or missing assertions).
+
+- 100% statement coverage does not guarantee all decision outcomes were tested.
+
+#### Decision (Branch) Coverage — Pros
+
+- Stronger than statement coverage: it requires tests that exercise both outcomes of decisions (e.g., true/false paths).
+
+- Useful for finding missing edge-case tests, especially around validation and exception branches.
+
+#### Decision (Branch) Coverage — Cons
+
+-Still does not guarantee full logical coverage: complex conditions can still hide untested sub-conditions.
+
+- Like statement coverage, it measures execution—not whether results are correct.
+
+#### Pros of Method Coverage
+
+- Shows which methods were never tested.
+
+- Easy to understand and interpret.
+
+- Complements statement and branch coverage by giving a high-level view of test reach.
+
+#### Cons of Method Coverage
+
+- Very coarse metric — only checks if a method was entered.
+
+- Does not ensure all internal branches or edge cases were tested.
+
+- Weaker than condition coverage for measuring logical completeness.
+
+## Pros and Cons of EclEmmma coverage tool 
+
+Pros:
+
+Easy integration with Eclipse.
+
+Clear red/green highlighting of uncovered code.
+
+Supports instruction, branch, and method metrics.
+
+Helps identify missing test paths quickly.
+
+Cons:
+
+Does not support condition coverage directly.
+
+Measures execution, not correctness.
+
+High coverage can give a false sense of quality.
+
+Does not support data-flow coverage (DU-pairs).
+
 
 # 2 Manual data-flow coverage calculations for X and Y methods
 
