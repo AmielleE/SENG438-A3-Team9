@@ -25,7 +25,7 @@ We measured control-flow adequacy of our existing Assignment 2 test suite by ins
 -  org.jfree.data.Range
 -  org.jfree.data.DataUtilities
 
-These were the findings our findings: 
+The results are shown below: 
 
 <img width="686" height="122" alt="Screenshot 2026-03-02 at 3 38 38 AM" src="https://github.com/user-attachments/assets/c1ef51db-e11b-4b87-a6e0-f958e71144c0" />
 
