@@ -17,71 +17,168 @@ for each group. Please see each lab document for details.)
 Text…
 
 # 2 Manual data-flow coverage calculations for X and Y methods
-For the manual data-flow coverage analysis, we selected the following two methods as required by the lab instructions:
 
-X Method: DataUtilities.calculateColumnTotal(Values2D data, int column)  
-Y Method: Range.constrain(double value)
+For the manual data flow coverage analysis we selected the following two methods as required by the lab instructions:
 
-These methods were chosen because we already developed test suites for them in Assignment 2, allowing us to trace DU pair coverage manually using our existing test cases.
+- X Method: DataUtilities.calculateColumnTotal(Values2D data, int column)
+- Y Method: Range.constrain(double value)
 
-2.1 DataUtilities.calculateColumnTotal(Values2D data, int column)
-This method initializes a variable total, retrieves the row count from the dataset, and iterates through each row to accumulate the values in a specified column.
+These methods were chosen because we already had test cases for them from Assignment 2 and reused them in Assignment 3. This allowed us to manually trace the execution of each test case and identify the definition-use pairs as required by the lab instructions for manual data flow coverage.
 
-Definitions:
-- total is defined at initialization and updated inside the loop
-- rowCount is defined from data.getRowCount()
-- n is defined when retrieving each cell value
+## DataUtilities.calculateColumnTotal(Values2D data, int column)
 
-Uses:
-- total is used in accumulation and return statement
-- n is used in the null check and addition
-- rowCount is used in loop control
+### Method description
+This method calculates the total of values in a specified column of a 2D dataset. The method first checks that the data object is not null initializes a total variable, retrieves the number of rows, and then iterates through each row to accumulate non null values. Finally it returns the computed total.
 
-DU-Pairs Identified:
-- total: (definition at initialization -> use in loop), (definition in loop -> use in next iteration), (definition -> return)
-- n: (definition at data.getValue -> use in null check and addition)
-- rowCount: (definition -> loop condition)
+The method also contains a second loop with the condition r2 > rowCount. Since r2 starts at 0 and rowCount is non negative, this loop is logically unreachable and represents an infeasible path.
 
-Test Case Coverage:
-Our test case calculateColumnTotal_ValidColumn_ShouldSumColumnValues() executes the main loop path where all values are non null, covering the primary DU-pairs for total, n, and rowCount.
+### Data flow graph:
+The main control and data flow of the method can be described as:
 
-The test calculateColumnTotal_NullValues_ShouldThrowException() covers the exception path when data is null.
+- Entry
+- Null check on data
+- Initialize total
+- Define rowCount using data.getRowCount()
+- Loop condition r < rowCount
+- Retrieve n = data.getValue(r, column)
+- Check if n is not null
+- Add n to total if non null
+- Repeat loop until condition becomes false
+- Return total and exit
 
-Additionally, the second loop (r2 > rowCount) is logically unreachable, meaning some DU-pairs associated with it are infeasible.
+The second loop is infeasible because the condition r2 > rowCount is false when r2 starts at 0. Therefore DU-pairs related to that loop are not considered in feasible coverage.
 
-Final DU-Pair Coverage:
-High coverage of feasible DU-pairs, roughly 100%, excluding infeasible paths caused by unreachable loop conditions.
+### Def-use sets per statement
+Variables considered: data, column, total, rowCount, r, and n.
 
-2.2 Range.constrain(double value)
-This method constrains a given value within the lower and upper bounds of the Range object.
+**-data** 
+  - Defined at method entry
+  - Used in null check, getRowCount(), and getValue()
 
-Definitions:
-- result is defined initially as value
-- result may be redefined if value is outside the range
+**-column**
+  - Defined at method entry
+  - Used in getValue(r, column)
 
-Uses:
-- value is used in comparisons
-- lower and upper bounds are used in conditional checks
-- result is used in the return statement
+**-total**
+  - Defined at initialization
+  - Used in accumulation and return statement
+  - Redefined inside the loop when values are added
 
-DU-Pairs Identified:
-- result: (initial definition -> return when inside range)
-- result: (redefinition at upper bound -> return)
-- result: (redefinition at lower bound -> return)
+**-rowCount**
+  - Defined using data.getRowCount()
+  - Used in the loop condition
 
-Test Case Coverage:
-The following test cases were used:
-- constrain_ValueInsideRange_ShouldReturnSameValue()
-- constrain_ValueBelowLower_ShouldReturnLowerBound()
-- constrain_ValueAboveUpper_ShouldReturnUpperBound()
+**-r**
+  - Defined in the for loop
+  - Used as an index in getValue(r, column)
 
-These tests cover all control flow paths:
-1. Value inside range
-2. Value below lower bound
-3. Value above upper bound
+**-n**
+  - Defined when retrieving each cell value
+  - Used in the null check and in the addition to total
 
-Final DU-Pair Coverage:
-All feasible DU-pairs for the variable (result) are covered by the existing test suite, resulting in roughly 100% DU-pair coverage for this method.
+**-DU-pairs per variable(feasable)**
+Only feasible DU-pairs are considered because the second loop is unreachable.
+
+**-data**
+  - Definition at entry, use in null check
+  - Definition at entry, use in getRowCount()
+  - Definition at entry, use in getValue()
+
+**-rowCount**
+  - Definition, use in loop condition (r < rowCount)
+
+**-r**
+  - Definition in loop, use in getValue(r, column)
+
+**-n**
+  - Definition at getValue, use in null check
+  - Definition at getValue, use in addition to total
+
+**-total**
+  - Definition at initialization, use in accumulation
+  - Redefinition in loop, use in next iteration
+  - Definition at initialization, use in return (when loop not executed)
+  - Redefinition in loop, use in return
+
+DU-pairs associated with the second loop are infeasible and excluded from the coverage calculation.
+
+### Test case coverage of DU-pairs
+We manually traced the execution of our existing test cases from the test suite.
+
+- calculateColumnTotal_ValidColumn_ShouldSumColumnValues  
+  This test executes the main loop with non null values. It covers DU-pairs for data, rowCount, r, n, and total during accumulation and return.
+
+- calculateColumnTotal_NullValues_ShouldThrowException  
+  This test passes null as the data parameter and triggers the exception at the null check. It covers the DU-pair where data is used in the validation statement.
+
+- calculateColumnTotal_ZeroRows_ShouldReturnZero  
+  This execution ensures the loop is not entered and covers the DU-pair where total is defined and directly returned.
+
+- calculateColumnTotal_NullValues_ShouldIgnoreNulls  
+  This test covers the branch where n is null and ensures both the null and non-null paths are exercised.
+
+### DU-pair coverage calculation
+Total feasible DU-pairs identified: 11  
+Covered DU-pairs through the test executions: 11  
+
+Therefore the DU-pair coverage for DataUtilities.calculateColumnTotal is approximately 100 percent for all feasible paths.  
+DU-pairs related to the unreachable second loop are considered infeasible and excluded from the final coverage calculation.
+
+## Range.constrain(double value)
+
+### Method description
+This method constrains a given value so that it stays within the lower and upper bounds of a Range object. If the value is inside the range, it returns the same value. If the value is greater than the upper bound it returns the upper bound. If the value is less than the lower bound, it returns the lower bound.
+
+### Data flow graph
+The execution flow of the method is:
+
+- Entry with input value
+- Initialize result = value
+- Check if value is inside the range using contains(value)
+- If value > upper, result is set to upper
+- Else if value < lower, result is set to lower
+- Return result and exit
+
+This creates three main execution paths: inside range, above upper bound, and below lower bound.
+
+### Def-use sets per statement
+Variables considered: value, result, lower, and upper.
+
+**-value**
+  - Defined at method entry
+  - Used in contains(value) and comparison conditions
+
+**-result**
+  - Defined initially as value
+  - Possibly redefined if value is outside the bounds
+  - Used in the return statement
+
+**-lower and upper**
+  - Used in conditional comparisons to determine constraint behavior
+
+### DU-pairs per variable (feasible)
+The main DU-pairs are for the variable result:
+
+- Initial definition of result, use in return when value is inside range
+- Redefinition of result at upper bound, use in return
+- Redefinition of result at lower bound, use in return
+
+Total feasible DU-pairs for result = 3
+
+### Test case coverage of DU-pairs
+We used the following test cases from our Range test suite:
+
+- constrain_ValueInsideRange_ShouldReturnSameValue
+- constrain_ValueAboveUpper_ShouldReturnUpperBound
+- constrain_ValueBelowLower_ShouldReturnLowerBound
+
+These tests cover all logical execution paths of the method and ensure that every definition of result reaches a use in the return statement.
+
+### DU-pair coverage calculation
+Total feasible DU-pairs identified: 3  
+Covered DU-pairs: 3  
+
+Therefore, the DU-pair coverage for Range.constrain is 100 percent since all feasible definition use paths for the result variable are exercised by the test suite.
 
 
 # 3 A detailed description of the testing strategy for the new unit test
