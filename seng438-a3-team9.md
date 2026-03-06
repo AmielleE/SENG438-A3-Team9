@@ -9,7 +9,7 @@
 | Amielle El Makhzoumi           | 30175286    |
 | Fatma Alzubaidi               |     |  
 | Faris Janjua               |     |  
-| Erioluwa Olubadejo             |     |  
+| Erioluwa Olubadejo             | 30187041    |  
 
 (Note that some labs require individual reports while others require one report
 for each group. Please see each lab document for details.)
