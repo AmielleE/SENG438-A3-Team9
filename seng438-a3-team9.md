@@ -16,9 +16,10 @@ for each group. Please see each lab document for details.)
 
 # 1 Introduction
 
-The goal of this assignment was to evaluate and improve the adequacy of our existing unit test suite using code coverage techniques. Unlike Assignment 2, which focused mainly on requirement based test design, this assignment emphasized white-box testing by analyzing how much of the source code is executed by our tests. 
+  The goal of this lab was to evaluate the adequacy of a unit test suite using code coverage techniques and to design additional tests to improve coverage. The system under test was the JFreeChart data utilities package, specifically the Range and DataUtilities classes.
 
-We measured control-flow coverage for the Range and DataUtilities classes using the EclEmma coverage tool in Eclipse. In addition, we manually analyzed data flow coverage for the methods DataUtilities.calculateColumnTotal() and Range.constrain() by identifying and tracing their definition-use pairs. Based on the coverage results, we designed additional JUnit tests to exercise uncovered branches and edge cases. This process helped improve overall coverage and provided a better understanding of the strengths and limitations of coverage metrics in evaluating test suites.
+
+  We measured control-flow coverage for the Range and DataUtilities classes using the EclEmma coverage tool in Eclipse. In addition, we manually analyzed data flow coverage for the methods DataUtilities.calculateColumnTotal() and Range.constrain() by identifying and tracing their definition-use pairs. Based on the coverage results, we designed additional JUnit tests to exercise uncovered branches and edge cases. This process helped improve overall coverage and provided a better understanding of the strengths and limitations of coverage metrics in evaluating test suites.
 
 # Measure Control Flow Coverage
 
@@ -278,7 +279,14 @@ Therefore, the DU-pair coverage for Range.constrain is 100 percent since all fea
 
 # 3 A detailed description of the testing strategy for the new unit test
 
-Text…
+  The strategy for developing the new unit tests focused on increasing control-flow coverage by targeting code paths that were not exercised by the existing test suite. Using the EclEmma coverage results, we first identified methods and branches in the Range and DataUtilities classes that had low coverage or contained untested conditions. New tests were then designed specifically to execute those paths.
+
+  The tests were created using JUnit 5, with Mockito used when mocking interfaces such as Values2D or KeyedValues was required. Each test was written to focus on a single scenario so that the executed path and expected behavior were clear. Particular attention was given to edge cases and boundary conditions, including null inputs, zero values, negative numbers, empty datasets, and ranges that cross or approach zero.
+
+  To improve branch coverage, tests were also written to exercise different logical outcomes within methods. For example, cases where values fall inside a range, outside the range, or exactly on the boundary were tested. Similarly, data utility methods were tested with combinations of valid values, null values, and mixed positive/negative numbers to ensure all relevant execution paths were triggered.
+
+  Overall, the strategy was to systematically use coverage feedback to guide test creation, ensuring that each additional test contributed to executing previously uncovered statements or branches while still verifying the expected behavior of the system.
+
 
 # 4 A high level description of five selected test cases you have designed using coverage information, and how they have increased code coverage
 
@@ -290,11 +298,18 @@ Text…
 
 # 6 Pros and Cons of coverage tools used and Metrics you report
 
-Text…
+  In this lab we used EclEmma, the Eclipse code coverage plugin, to measure how much of the code was exercised by our JUnit tests. The main metrics reported were instruction (statement) coverage, branch coverage, and method coverage. These metrics helped identify which parts of the Range and DataUtilities classes were not being executed during testing. One of the main advantages of using EclEmma is that it integrates directly with Eclipse and is easy to run alongside JUnit tests. The tool also highlights covered and uncovered lines in green and red, which makes it straightforward to identify missing test paths visually. This makes it useful for quickly locating sections of code that require additional testing.
+
+  However, coverage tools also have several limitations. Coverage metrics only indicate whether code was executed, not whether the behavior was correct. It is possible to achieve high coverage while still having weak assertions or missing logical validations in tests. Additionally, the version of EclEmma used in our setup did not support condition coverage, which meant we had to rely on method coverage instead. Another limitation is that tools like EclEmma do not detect infeasible paths or logical issues within the code.
+
+  Overall, coverage tools are useful for guiding test development and identifying gaps in test suites, but they should be used together with well designed test cases and meaningful assertions rather than as the only measure of test quality.
 
 # 7 A comparison on the advantages and disadvantages of requirements-based test generation and coverage-based test generation.
+  Requirements-based test generation focuses on creating tests based on the expected behavior of the system, typically derived from specifications, documentation, or requirements. This approach ensures that the system is validated against what it is supposed to do from a user or functional perspective. One advantage of this approach is that it helps verify correctness of functionality and ensures that important features are tested. However, it may miss internal execution paths or edge cases that are not explicitly described in the requirements.
 
-Text…
+  Coverage-based test generation, on the other hand, is based on analyzing the source code structure to ensure that different execution paths are exercised. By using coverage metrics such as statement or branch coverage, testers can identify areas of the code that are not being executed and design tests specifically to target those sections. This approach is useful for improving the completeness of a test suite and for identifying hidden branches or conditions that might otherwise be overlooked. Despite this, coverage-based testing does not guarantee that the program is tested according to its intended behavior. A test may execute a line of code without actually verifying that the output is correct. Because of this, relying solely on coverage metrics can give a false sense of confidence in the test suite.
+
+  In practice, both approaches are complementary. Requirements-based testing ensures that the system meets its intended functionality, while coverage-based testing helps ensure that the internal implementation is thoroughly exercised. Using both strategies together results in a more robust and reliable testing process.
 
 # 8 A discussion on how the team work/effort was divided and managed
 
