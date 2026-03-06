@@ -332,45 +332,16 @@ Text…
 <img width="807" height="539" alt="image" src="https://github.com/user-attachments/assets/eb8e7abf-f8f2-40b8-8e46-4e040c7d893f" />
 <img width="722" height="563" alt="image" src="https://github.com/user-attachments/assets/194b44b0-ab70-4d39-8c6f-8388cd91dce0" />
 <img width="582" height="563" alt="image" src="https://github.com/user-attachments/assets/0964d34b-f2b2-45d0-82d3-d90350a340a2" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="543" height="563" alt="image" src="https://github.com/user-attachments/assets/cac2647a-0c48-408e-818c-2a4e2bcda5e1" />
+<img width="776" height="563" alt="image" src="https://github.com/user-attachments/assets/d6c806c3-e968-4341-8de3-7d3c52234248" />
+<img width="641" height="563" alt="image" src="https://github.com/user-attachments/assets/54865745-2e8d-4775-a546-7eb151e410e3" />
+<img width="636" height="563" alt="image" src="https://github.com/user-attachments/assets/341b9fff-52e9-48fe-9715-0be76c2c1aba" />
+<img width="671" height="563" alt="image" src="https://github.com/user-attachments/assets/497db77b-f05b-42e0-81ea-377f9b2b5747" />
+<img width="789" height="563" alt="image" src="https://github.com/user-attachments/assets/4963c6c8-4019-436c-b438-a6fe23944bd1" />
+<img width="855" height="563" alt="image" src="https://github.com/user-attachments/assets/961ab4b7-c738-45b0-a261-d1c28dce1b68" />
+<img width="632" height="563" alt="image" src="https://github.com/user-attachments/assets/9b030697-0964-45e0-84d0-829ac40b6bf8" />
+<img width="612" height="563" alt="image" src="https://github.com/user-attachments/assets/5f28d550-a7de-466a-b3ad-cf5988a64912" />
+<img width="575" height="563" alt="image" src="https://github.com/user-attachments/assets/7adb410f-d68e-4ba6-86a2-5f51aa8fa44c" />
 
 # 6 Pros and Cons of coverage tools used and Metrics you report
 
