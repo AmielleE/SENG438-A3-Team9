@@ -16,8 +16,9 @@ for each group. Please see each lab document for details.)
 
 # 1 Introduction
 
+The goal of this assignment was to evaluate and improve the adequacy of our existing unit test suite using code coverage techniques. Unlike Assignment 2, which focused mainly on requirement based test design, this assignment emphasized white-box testing by analyzing how much of the source code is executed by our tests. 
 
-Text…
+We measured control-flow coverage for the Range and DataUtilities classes using the EclEmma coverage tool in Eclipse. In addition, we manually analyzed data flow coverage for the methods DataUtilities.calculateColumnTotal() and Range.constrain() by identifying and tracing their definition-use pairs. Based on the coverage results, we designed additional JUnit tests to exercise uncovered branches and edge cases. This process helped improve overall coverage and provided a better understanding of the strengths and limitations of coverage metrics in evaluating test suites.
 
 # Measure Control Flow Coverage
 
