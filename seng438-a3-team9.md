@@ -295,6 +295,61 @@ Text…
 # 5 A detailed report of the coverage achieved of each class and method (a screen shot from the code cover results in green and red color would suffice)
 
 <img width="1001" height="563" alt="image" src="https://github.com/user-attachments/assets/74d4a97c-cb02-4b46-b732-946e1bb232e7" />
+<img width="1514" height="1251" alt="image" src="https://github.com/user-attachments/assets/4b542828-db3c-4513-a824-947fa5f673af" />
+<img width="429" height="563" alt="image" src="https://github.com/user-attachments/assets/c9f74d44-7307-4c03-ad3b-1f470b5b3f40" />
+<img width="510" height="563" alt="image" src="https://github.com/user-attachments/assets/4f981f15-0a41-402c-b409-0468fa2de6d5" />
+<img width="528" height="563" alt="image" src="https://github.com/user-attachments/assets/eab2cf2f-1d3d-4da3-ae4f-6273f0935778" />
+<img width="495" height="563" alt="image" src="https://github.com/user-attachments/assets/c7ffb5f2-c863-4d2a-9dfc-3a22f7beba23" />
+<img width="513" height="563" alt="image" src="https://github.com/user-attachments/assets/a64a9bc6-c22c-4118-bce5-31efe8fe9985" />
+<img width="491" height="563" alt="image" src="https://github.com/user-attachments/assets/74358b37-f0e0-458c-ac9b-4ca664e4185b" />
+<img width="593" height="563" alt="image" src="https://github.com/user-attachments/assets/edebf8cb-b9d1-4ae4-a640-c1484c7a627a" />
+<img width="563" height="563" alt="image" src="https://github.com/user-attachments/assets/a171fb41-90c5-4ea3-affb-e85f68f17656" />
+<img width="695" height="563" alt="image" src="https://github.com/user-attachments/assets/650a1f98-1182-43b2-be28-524cde7fdb62" />
+<img width="615" height="563" alt="image" src="https://github.com/user-attachments/assets/461c1d84-8750-46df-863d-2462bd48980e" />
+<img width="623" height="563" alt="image" src="https://github.com/user-attachments/assets/b5dfe78a-2ab2-4ef1-b221-b89dfbcaf0e2" />
+<img width="581" height="563" alt="image" src="https://github.com/user-attachments/assets/93c38da0-b5a7-4216-b2af-6e8ad85c255a" />
+<img width="813" height="563" alt="image" src="https://github.com/user-attachments/assets/425d5a76-eb66-4348-bc5b-4a310bcad9a6" />
+<img width="489" height="563" alt="image" src="https://github.com/user-attachments/assets/63980146-d503-4f04-b52b-4e0bf13e828c" />
+<img width="509" height="563" alt="image" src="https://github.com/user-attachments/assets/5da2cca7-f3c7-4f37-9a70-4741b89d5863" />
+<img width="678" height="563" alt="image" src="https://github.com/user-attachments/assets/5e47b2bb-0fc3-4ba2-b1bd-070463b370fa" />
+<img width="916" height="519" alt="image" src="https://github.com/user-attachments/assets/a4d61d29-f2a0-40ce-b26d-3dca7efae112" />
+<img width="641" height="563" alt="image" src="https://github.com/user-attachments/assets/5c3f26f1-1463-4a31-998f-33110e141048" />
+<img width="623" height="563" alt="image" src="https://github.com/user-attachments/assets/9811b2c3-f127-4dc7-8fcd-33b2b25b29c5" />
+<img width="670" height="276" alt="image" src="https://github.com/user-attachments/assets/e05f8ecf-a566-473a-8d31-5844d0b7e384" />
+<img width="635" height="563" alt="image" src="https://github.com/user-attachments/assets/a4dab9c4-addc-4edb-ba01-ecb809aacd7d" />
+<img width="530" height="563" alt="image" src="https://github.com/user-attachments/assets/a3771153-8f62-4e97-86d3-0dea3c827cb8" />
+<img width="698" height="563" alt="image" src="https://github.com/user-attachments/assets/802380a0-2145-4cbd-8d64-d0861f360793" />
+<img width="648" height="563" alt="image" src="https://github.com/user-attachments/assets/f4b02319-19fa-4d7e-9e65-5cdae8a1b04e" />
+<img width="603" height="563" alt="image" src="https://github.com/user-attachments/assets/c808684c-6750-4e8f-9a2d-deb5d8a4ac75" />
+<img width="723" height="563" alt="image" src="https://github.com/user-attachments/assets/50688672-babe-449c-a729-7a050c276dea" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # 6 Pros and Cons of coverage tools used and Metrics you report
