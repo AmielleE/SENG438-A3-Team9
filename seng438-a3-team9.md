@@ -345,7 +345,7 @@ Text…
 
 # 6 Pros and Cons of coverage tools used and Metrics you report
 
-  In this lab we used EclEmma, the Eclipse code coverage plugin, to measure how much of the code was exercised by our JUnit tests. The main metrics reported were instruction (statement) coverage, branch coverage, and method coverage. These metrics helped identify which parts of the Range and DataUtilities classes were not being executed during testing. One of the main advantages of using EclEmma is that it integrates directly with Eclipse and is easy to run alongside JUnit tests. The tool also highlights covered and uncovered lines in green and red, which makes it straightforward to identify missing test paths visually. This makes it useful for quickly locating sections of code that require additional testing.
+  In this lab, we used EclEmma, the Eclipse code coverage plugin, to measure how much of the code was exercised by our JUnit tests. The main metrics reported were instruction (statement) coverage, branch coverage, and method coverage. These metrics helped identify which parts of the Range and DataUtilities classes were not being executed during testing. One of the main advantages of using EclEmma is that it integrates directly with Eclipse and is easy to run alongside JUnit tests. The tool also highlights covered and uncovered lines in green and red, which makes it straightforward to identify missing test paths visually. This makes it useful for quickly locating sections of code that require additional testing.
 
   However, coverage tools also have several limitations. Coverage metrics only indicate whether code was executed, not whether the behavior was correct. It is possible to achieve high coverage while still having weak assertions or missing logical validations in tests. Additionally, the version of EclEmma used in our setup did not support condition coverage, which meant we had to rely on method coverage instead. Another limitation is that tools like EclEmma do not detect infeasible paths or logical issues within the code.
 
@@ -360,12 +360,31 @@ Text…
 
 # 8 A discussion on how the team work/effort was divided and managed
 
-Text…
+Pair 1: Fatma & Amielle
+Measure of control flow coverage was completed by the whole team, with Fatma & Amielle being the main contributors to this section.
+Fatma & Amielle analyzed the method and calculated the DU-pair for DataUtilities.calculateColumnTotal.
+Fatma & Amielle  designed new unit tests for org.jfree.data.Rang to increase code coverage.
+
+
+Pair 2: Josral, Faris & Erioluwa
+Josral, Faris & Erioluwa analyzed the method and calculated the DU-pair for org.jfree.data.Range.
+Josral, Faris & Erioluwa designed new unit tests for DataUtilities.calculateColumnTotal to increase code coverage.
+The lab report was created and curated by the whole team, with Josral, Faris & Erioluwa expanding on the skeleton report first created together with Fatma & Amielle.
+
+Every method was re-analyzed by each respective pairing to validate our answers.
+Each unit test created was re-analyzed by each respective pairing to validate our answers.
+
+Additionally, the team conducted regression testing by rerunning previously completed scenarios on a newer system version to identify which issues had been resolved and which still persisted. Overall, the work was coordinated through collaboration and task sharing, enabling the team to make progress efficiently while keeping clear records of results and defects.
 
 # 9 Any difficulties encountered, challenges overcome, and lessons learned from performing the lab
 
-Text…
+  One of the main challenges in this lab was understanding how coverage metrics relate to the actual quality of a test suite. While the coverage tool made it easy to identify unexecuted code, it was sometimes unclear how to design tests that would meaningfully exercise those paths without simply writing superficial tests for the sake of increasing coverage.
+  
+  Another difficulty was performing the manual data-flow analysis, which required carefully tracing variable definitions and uses through the code. This process was time-consuming but helped clarify how DU-pairs work and how they relate to execution paths within a method.
+  
+  By completing this lab, we learnt that high coverage alone does not guarantee good tests. Meaningful assertions and well designed edge cases are equally important. It also reinforced the importance of using coverage tools as a guide for improving tests rather than treating coverage percentages as the sole objective.
 
 # 10 Comments/feedback on the lab itself
 
-Text…
+This lab was useful for gaining practical experience with code coverage analysis and data-flow testing. It helped connect theoretical coverage concepts with real testing tools and demonstrated how coverage results can be used to improve a test suite. The combination of automated coverage measurement and manual analysis also helped deepen our understanding of how different coverage criteria work. Although it was difficult to implement the instructions from Section 2 as the descriptions were a bit difficult to understand.
+
