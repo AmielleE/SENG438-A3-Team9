@@ -290,7 +290,15 @@ Therefore, the DU-pair coverage for Range.constrain is 100 percent since all fea
 
 # 4 A high level description of five selected test cases you have designed using coverage information, and how they have increased code coverage
 
-Text…
+The first test case, calculateColumnTotal_ZeroRows_ShouldReturnZero, verifies the behavior when the dataset contains zero rows. This test increases coverage by exercising the path where the loop is not entered at all, ensuring that the method correctly returns a total of zero without performing any iterations.
+
+The second test case, calculateColumnTotal_NullValues_ShouldIgnoreNulls, checks how the method behaves when some dataset values are null. This improves decision coverage by executing both outcomes of the condition that checks whether a value is null. Previously, only the branch where values were non-null had been tested, so this case ensures the branch where null values are ignored is also executed.
+
+The third test case, constrain_ValueInsideRange_ShouldReturnSameValue, validates the situation where the input value already lies within the specified range. This increases coverage by executing the path where neither the lower nor upper bound condition is triggered, confirming that the method correctly returns the original value when it is already within bounds.
+
+The fourth test case, constrain_ValueAboveUpper_ShouldReturnUpperBound, tests the condition where the input value exceeds the upper bound of the range. This increases branch coverage by executing the decision path that assigns the result to the upper bound when the value is too large.
+
+The fifth test case, constrain_ValueBelowLower_ShouldReturnLowerBound, tests the opposite scenario where the input value is below the lower bound. This ensures that the branch assigning the result to the lower bound is executed. Together with the previous constrain tests, this completes coverage of all logical paths within the constrain() method.
 
 # 5 A detailed report of the coverage achieved of each class and method (a screen shot from the code cover results in green and red color would suffice)
 
