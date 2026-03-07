@@ -7,8 +7,8 @@
 | Student Names: |  UCID:   |
 |      Josral Frederick          |  30195360   |
 | Amielle El Makhzoumi           | 30175286    |
-| Fatma Alzubaidi               |     |  
-| Faris Janjua               |     |  
+| Fatma Alzubaidi               |   30172637  |  
+| Faris Janjua               |  30154612   |  
 | Erioluwa Olubadejo             | 30187041    |  
 
 (Note that some labs require individual reports while others require one report
